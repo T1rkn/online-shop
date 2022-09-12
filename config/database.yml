@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: firstrailsapp
+  password: 1234
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: shop_rails_development
+
+test:
+  <<: *default
+  database: shop_rails_test
+
+# production:
+#   <<: *default
+#   database: shop_rails_production
+#   username: shop_rails
+#   password: <%= ENV['SHOP_RAILS_DATABASE_PASSWORD'] %>
