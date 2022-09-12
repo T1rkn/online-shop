@@ -1,0 +1,2 @@
+class TypeBrand < ApplicationRecord
+end
