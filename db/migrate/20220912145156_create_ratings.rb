@@ -1,7 +1,9 @@
 class CreateRatings < ActiveRecord::Migration[6.1]
   def change
     create_table :ratings do |t|
-      t.integer :rate, allowNull: false
+      t.integer :rate, null: false
+      t.references :user, foreign_key: true
+      t.references :device, foreign_key: true
       t.timestamps
     end
   end
